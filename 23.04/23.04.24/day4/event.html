@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+
+        p {
+            padding: 20px;
+            background-color: aquamarine;
+            display: block;
+        }
+
+        span {
+            padding: 20px;
+            background-color: white;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        DIV
+        <p>
+            P
+            <span>
+                SPAN
+            </span>
+        </p>
+    </div>
+    <script>
+        const d = document.querySelector("div")
+        d.addEventListener("click", function(e) {
+            console.log(e.target, "여기는 div태그의 이벤트 함수")
+        })
+        const p = document.querySelector("p")
+        p.addEventListener("click", function(e) {
+            console.log(e.target, "여기는 p태그의 이벤트 함수")
+        })
+        const s = document.querySelector("span")
+        s.addEventListener("click", function(e) {
+            console.log(e.target, "여기는 span태그의 이벤트 함수")
+            e.stopPropagation()
+            e.stopImmediatePropagation()
+
+        })
+    </script>
+</body>
+</html>
